@@ -53,6 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				{/* Simple Footer */}
 				<footer className="bg-darkGray p-8 text-center text-sm text-gray-500 mt-12">
 					<p>&copy; {new Date().getFullYear()} The Croax. Hamburg.</p>
+					<Link href="/impressum" className="hover:text-secondary">Impressum</Link>
 				</footer>
 			</body>
 		</html>
