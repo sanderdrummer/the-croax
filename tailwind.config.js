@@ -12,7 +12,7 @@ module.exports = {
 				// Off-white for main text
 				secondary: "#e0e0e0",
 				// Red accents
-				accent: "#b22222",
+				accent: "#f536ab",
 				// Lighter gray for subtle details/borders
 				lightGray: "#4a4a4a",
 				// A very dark gray, almost black for depth if needed

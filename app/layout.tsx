@@ -1,4 +1,4 @@
-import { Anton, Open_Sans, Orbitron, Big_Shoulders } from 'next/font/google';
+import { Anton, Open_Sans, Orbitron, Protest_Riot, Big_Shoulders } from 'next/font/google';
 import './globals.css'; // Your global styles
 import Link from 'next/link';
 import { Metadata } from 'next';
