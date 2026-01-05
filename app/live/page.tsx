@@ -1,26 +1,120 @@
+import Script from 'next/script';
+
+export type Gig = {
+  date: string;
+  time?: string;
+  title: string;
+  url: string;
+  promo: string;
+  city: string;
+  location: string;
+  image?: string;
+};
+const gigs: Gig[] = [
+  {
+    date: "29.01.2026",
+    time: "20:00",
+    promo: `Light The Cannons, The Croax, Kultfaktor‚
+Drei der besten Independent-Rockbands Hamburgs kommen im Marx zusammen, um euch auf eine Reise von Post-Punk bis Hardrock und allem dazwischen mitzunehmen. Freut euch auf mitreißende Songs, mitreißende Melodien, gewaltige Riffs und genug Energie, um selbst die kältesten Januarnächte aufzuwärmen.
+
+Powered by Planet 7 Music.`,
+    url: "https://www.eventim.de/eventseries/light-the-cannons-the-croax-kultfaktor-4038272/",
+    title: "Light The Cannons, The Croax, Kultfaktor",
+    city: "HAMBURG",
+    location: "Markthalle MarX"
+  }
+]
+
+const formatISO = (dateStr: string, timeStr?: string) => {
+  const [d, m, y] = dateStr.split('.');
+  return `${y}-${m}-${d}${timeStr ? `T${timeStr}:00` : ''}`;
+};
+
 export default function Live() {
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": gigs.map((gig, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "MusicEvent",
+        "name": gig.title,
+        "startDate": formatISO(gig.date, gig.time),
+        "url": gig.url,
+        "location": {
+          "@type": "Place",
+          "name": gig.location,
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": gig.city,
+            "addressCountry": "DE"
+          }
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": gig.url,
+          "availability": "https://schema.org/InStock"
+        },
+        "image": gig.image || "https://yourbandwebsite.com/og-image.jpg" // Fallback image recommended
+      }
+    }))
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
+      <Script
+        id="gigs"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <h1 className="font-display text-5xl text-accent mb-12 uppercase tracking-wide text-center">Live</h1>
-
-      {/* Upcoming Shows */}
       <div className="mb-16">
         <h2 className="font-display text-3xl text-white mb-6 uppercase">Kommende Shows</h2>
         <div className="bg-darkGray border border-lightGray">
-          {/* Single Event Row */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between p-6 border-b border-lightGray hover:bg-lightGray/20 transition">
-            <div className="mb-2 md:mb-0">
-              <div className="font-display text-2xl text-white">12. OKT 2025</div>
-              <div className="text-accent font-bold uppercase">Hamburg</div>
-            </div>
-            <div className="text-lg mb-4 md:mb-0">
-              Monkey's Music Club <span className="text-gray-500 text-sm block md:inline md:ml-2">w/ Some Other Band</span>
-            </div>
-            <button className="px-4 py-2 border border-accent text-accent hover:bg-accent hover:text-white uppercase text-sm font-bold transition">
-              Tickets / Infos
-            </button>
+          <div className="space-y-8">
+            {gigs.map((gig) => {
+              const [day, month, year] = gig.date.split('.');
+
+              return (
+                <div key={gig.date} className="group relative grid grid-cols-1 md:grid-cols-12 gap-6 p-8 border border-lightGray/30 bg-darkGray/50 hover:bg-darkGray transition-all duration-300">
+
+                  <div className="md:col-span-3 flex flex-row md:flex-col items-baseline md:items-start gap-2 border-b md:border-b-0 md:border-r border-lightGray/20 pb-4 md:pb-0">
+                    <span className="text-3xl font-black tracking-tighter text-white">{day}.{month}.{year}</span>
+                    <div className="flex flex-col">
+                      <span className="text-accent font-bold uppercase tracking-widest text-sm">{gig.time} UHR</span>
+                    </div>
+                  </div>
+
+                  <div className="md:col-span-6 flex flex-col justify-center">
+                    <h3 className="text-2xl font-display uppercase leading-tight mb-2 group-hover:text-accent transition-colors">
+                      {gig.title}
+                    </h3>
+                    <div className="flex items-center gap-2 mb-4 text-sm font-bold text-gray-300">
+                      <span className="text-accent">@</span>
+                      <span>{gig.location}, {gig.city}</span>
+                    </div>
+                    {/* Promo text: smaller and slightly muted for clarity */}
+                    <p className="text-gray-400 text-sm leading-relaxed line-clamp-3 md:line-clamp-none">
+                      {gig.promo}
+                    </p>
+                  </div>
+
+                  {/* ACTION COLUMN (3 cols) */}
+                  <div className="md:col-span-3 flex items-center md:justify-end">
+                    <a
+                      href={gig.url}
+                      target="_blank"
+                      className="w-full md:w-auto text-center px-6 py-4 bg-transparent border-2 border-accent text-accent font-black uppercase tracking-tighter hover:bg-accent hover:text-black transition-all transform active:scale-95"
+                    >
+                      Tickets
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-          {/* Add more rows here */}
           <div className="p-6 text-center italic text-gray-500">Weitere Termine in Planung...</div>
         </div>
       </div>

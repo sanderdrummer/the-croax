@@ -1,25 +1,21 @@
-// app/layout.js
-
-import { Anton, Open_Sans } from 'next/font/google';
+import { Anton, Open_Sans, Orbitron, Big_Shoulders } from 'next/font/google';
 import './globals.css'; // Your global styles
-import { ReactNode } from 'react';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
-// 1. Define Anton for Display/Highlights
-const anton = Anton({
+const anton = Orbitron({
 	subsets: ['latin'],
-	weight: '400', // Anton only has one weight
-	variable: '--font-display', // Custom CSS variable name
+	weight: '400',
+	variable: '--font-display',
 });
 
-// 2. Define Open Sans for Body Text
 const openSans = Open_Sans({
 	subsets: ['latin'],
-	display: 'swap',
+	// display: 'swap',
 	variable: '--font-sans', // Custom CSS variable name
 });
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: 'The Croax | Hamburg Punkrock',
 	description: 'Laut, direkt und ohne Schnickschack.',
 };
