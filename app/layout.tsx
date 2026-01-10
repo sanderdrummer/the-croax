@@ -1,55 +1,51 @@
-import { Anton, Open_Sans, Orbitron, Protest_Riot, Big_Shoulders } from 'next/font/google';
-import './globals.css'; // Your global styles
-import Link from 'next/link';
-import { Metadata } from 'next';
+import { Open_Sans, Protest_Riot } from "next/font/google";
+import "./globals.css"; // Your global styles
+import type { Metadata } from "next";
+import { Link } from "@/components";
 
-const anton = Orbitron({
-	subsets: ['latin'],
-	weight: '400',
-	variable: '--font-display',
+const anton = Protest_Riot({
+	subsets: ["latin"],
+	weight: "400",
+	variable: "--font-display",
 });
 
 const openSans = Open_Sans({
-	subsets: ['latin'],
-	// display: 'swap',
-	variable: '--font-sans', // Custom CSS variable name
+	subsets: ["latin"],
+	variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
-	title: 'The Croax | Hamburg Punkrock',
-	description: 'Laut, direkt und ohne Schnickschack.',
+	title: "The Croax | Hamburg Punkrock",
+	description: "Laut, direkt und ohne Schnickschack.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+	children,
+}: {
+	children: React.ReactNode;
+}) {
+	const currentYear = new Date().getFullYear();
 	return (
 		<html lang="de" className={`${openSans.variable} ${anton.variable}`}>
 			<body className="bg-primary text-secondary font-sans min-h-screen flex flex-col">
-				{/* Navigation */}
-				<nav className="sticky top-0 z-50 bg-darkGray/90 backdrop-blur-sm border-b border-lightGray p-4">
-					<div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-						<Link href="/" className="text-2xl font-display text-accent uppercase tracking-widest hover:text-white transition">
-							The Croax
-						</Link>
-						<div className="flex flex-wrap justify-center gap-6 text-sm font-bold uppercase tracking-wide">
-							<Link href="/about" className="hover:text-accent transition">Über uns</Link>
-							<Link href="/music" className="hover:text-accent transition">Musik</Link>
-							<Link href="/live" className="hover:text-accent transition">Live</Link>
-							<Link href="/press" className="hover:text-accent transition">Presse</Link>
-							<a href="https://thecroax.bandcamp.com/merch" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition">Shop</a>
-							<Link href="/contact" className="hover:text-accent transition">Kontakt</Link>
+				<main className="flex-grow">{children}</main>
+
+				<footer className="py-24 px-6 border-t border-lightGray/10 bg-darkGray/50">
+					<div className="max-w-7xl mx-auto flex flex-col items-center gap-4">
+						<div className="font-display text-5xl md:text-7xl mb-12 select-none tracking-tighter">
+							THE CROAX
+						</div>
+
+						<div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[10px] tracking-[0.3em] text-secondary/40 font-sans font-bold uppercase">
+							<Link href="/">Home</Link>
+							<span className="hidden md:block w-1 h-1 bg-accent rounded-full" />
+
+								<Link href="/impressum">Impressum</Link>
+						</div>
+						<div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[10px] tracking-[0.3em] text-secondary/40 font-sans font-bold uppercase">
+							<span>&copy; {currentYear} Hamburg</span>
 						</div>
 					</div>
-				</nav>
-
-				{/* Main Content */}
-				<main className="flex-grow">
-					{children}
-				</main>
-
-				{/* Simple Footer */}
-				<footer className="bg-darkGray p-8 text-center text-sm text-gray-500 mt-12">
-					<p>&copy; {new Date().getFullYear()} The Croax. Hamburg.</p>
-					<Link href="/impressum" className="hover:text-secondary">Impressum</Link>
 				</footer>
 			</body>
 		</html>

@@ -1,17 +1,20 @@
 {
 	"name": "the-croax",
 	"version": "0.1.0",
+	"homepage": "https://sanderdrummer.github.io/the-croax",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
+		"build": "next build && touch out/.nojekyll",
+		"start": "npx serve@latest out",
 		"check": "npx @biomejs/biome check --write .",
+		"deploy": "npx gh-pages -d out",
 		"update": "npx npm-check-updates --interactive",
 		"lint": "eslint"
 	},
 	"dependencies": {
 		"@heroicons/react": "^2.2.0",
+		"dayjs": "^1.11.19",
 		"gray-matter": "^4.0.3",
 		"next": "16.1.1",
 		"react": "19.2.3",

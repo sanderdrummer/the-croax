@@ -19,14 +19,13 @@ module.exports = {
 				darkGray: "#0d0d0d",
 			},
 			fontFamily: {
-				// Reference the variables defined in layout.js
-				sans: ["var(--font-sans)", "sans-serif"], // Open Sans
-				display: ["var(--font-display)", "sans-serif"], // Anton
+				sans: ["var(--font-sans)", "sans-serif"],
+				display: ["var(--font-display)", "sans-serif"],
 			},
 		},
 	},
 	plugins: [
 		// eslint-disable-next-line @typescript-eslint/no-require-imports
-		require('@tailwindcss/typography'),
+		require("@tailwindcss/typography"),
 	],
 };
