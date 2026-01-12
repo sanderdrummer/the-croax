@@ -1,49 +1,25 @@
+import Image from "next/image";
 import type { JSX } from "react";
+import { About } from "@/app/about";
 import { Shows } from "@/app/shows";
-import {Link, SectionHeading} from "@/components";
-import {About} from "@/app/about";
-import Image from 'next/image'
-
-
+import { CTALink, Link, SectionHeading } from "@/components";
 
 export default function BandPage(): JSX.Element {
 	return (
 		<div className="min-h-screen bg-primary selection:bg-accent selection:text-white">
 			<main>
 				{/* Hero Section */}
-				<section className="flex items-center justify-center bg-darkGray relative overflow-hidden">
-					<div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary opacity-50 z-0" />
-					<div className="text-center p-4">
-						<h1 className="font-display text-6xl leading-none uppercase tracking-tighter">
-							<Image
-								width={482}
-								height={195}
-								className="max-w-full"
-								src="logo.png"
-								alt="the croax"
-							/>
-						</h1>
-						<h2 className="font-sans tracking-[0.5em] text-xs md:text-sm mt-6 text-secondary/60">
-							Laut, direkt und ohne Schnickschack
-						</h2>
-					</div>
-				</section>
 				<nav className="sticky top-0 w-full z-50 bg-darkGray/80 backdrop-blur-md border-b border-lightGray/30">
 					<div className="flex gap-8 place-content-center">
-							<Link
-								href="#about-us"
-								className="px-2 py-6 tracking-widest"
-							>
-								Über uns
-							</Link>
-						<Link
-							href="#live"
-							className="px-2 py-6 tracking-widest"
-						>Live</Link>
-						<Link
-							href="#music"
-							className="px-2 py-6 tracking-widest"
-						>Music</Link>
+						<Link href="#about-us" className="px-2 py-6 tracking-widest">
+							Über uns
+						</Link>
+						<Link href="#live" className="px-2 py-6 tracking-widest">
+							Live
+						</Link>
+						<Link href="#music" className="px-2 py-6 tracking-widest">
+							Music
+						</Link>
 					</div>
 				</nav>
 
@@ -67,21 +43,26 @@ export default function BandPage(): JSX.Element {
 							/>
 						</div>
 						<div className="lg:col-span-5 flex flex-col justify-center">
-							<h3 className="font-display text-4xl mb-6">Drown in deep, Baby</h3>
+							<h3 className="font-display text-4xl mb-6">
+								Drown in deep, Baby
+							</h3>
 							<p className="text-secondary/70 mb-10 text-lg">
 								The sophomore album exploring the intersection of silence and
 								distortion.
 							</p>
 							<div className="grid grid-cols-2 gap-4">
-								<a className="border border-secondary text-secondary px-6 py-4 font-bold uppercase hover:bg-secondary hover:text-primary transition-colors">
+								<CTALink href="https://open.spotify.com/artist/36a3EwllvuaKLwOZfYE6Km">
 									Spotify
-								</a>
-								<a className="border border-secondary text-secondary px-6 py-4 font-bold uppercase hover:bg-secondary hover:text-primary transition-colors">
+								</CTALink>
+								<CTALink href="https://music.apple.com/us/artist/the-croax/1778246435">
 									Apple Music
-								</a>
-								<a className="border border-secondary text-secondary px-6 py-4 font-bold uppercase hover:bg-secondary hover:text-primary transition-colors">
+								</CTALink>
+								<CTALink href="https://music.youtube.com/channel/UCYTwAPKQvGntp0BYz_uOoZg?si=eIIC-OlhJpL5xtfC">
 									Youtube Music
-								</a>
+								</CTALink>
+								<CTALink href="https://thecroax.bandcamp.com/">
+									Bandcamp
+								</CTALink>
 							</div>
 						</div>
 					</div>

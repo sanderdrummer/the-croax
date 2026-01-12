@@ -28,7 +28,30 @@ export default function RootLayout({
 	return (
 		<html lang="de" className={`${openSans.variable} ${anton.variable}`}>
 			<body className="bg-primary text-secondary font-sans min-h-screen flex flex-col">
-				<main className="flex-grow">{children}</main>
+				<main className="flex-grow">
+					<section className="flex items-center justify-center bg-darkGray relative overflow-hidden">
+						<div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary opacity-50 z-0" />
+						<div className="text-center p-4">
+							<h1 className="font-display text-6xl leading-none uppercase tracking-tighter">
+								{/** biome-ignore lint/performance/noImgElement: <explanation> */}
+								<img
+									width={482}
+									height={195}
+									className="max-w-full"
+									src="logo.png"
+									alt="the croax"
+								/>
+							</h1>
+							<h2 className="font-sans tracking-[0.5em] text-xs md:text-sm  text-accent">
+								Hamburg Grrrl Punk
+							</h2>
+							<h3 className="font-sans tracking-[0.5em] text-xs md:text-sm text-secondary/60">
+								Laut, direkt und ohne Schnickschack
+							</h3>
+						</div>
+					</section>
+					{children}
+				</main>
 
 				<footer className="py-24 px-6 border-t border-lightGray/10 bg-darkGray/50">
 					<div className="max-w-7xl mx-auto flex flex-col items-center gap-4">
@@ -40,7 +63,7 @@ export default function RootLayout({
 							<Link href="/">Home</Link>
 							<span className="hidden md:block w-1 h-1 bg-accent rounded-full" />
 
-								<Link href="/impressum">Impressum</Link>
+							<Link href="/impressum">Impressum</Link>
 						</div>
 						<div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[10px] tracking-[0.3em] text-secondary/40 font-sans font-bold uppercase">
 							<span>&copy; {currentYear} Hamburg</span>

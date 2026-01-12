@@ -1,5 +1,5 @@
 import NextLink from "next/link";
-import type { JSX, ReactNode } from "react";
+import type { ComponentProps, JSX, ReactNode } from "react";
 
 export const P = ({ children }: { children: ReactNode }) => {
 	return (
@@ -28,15 +28,17 @@ export const Section = ({
 	children: ReactNode;
 	heading: string;
 	id: string;
-	variant?: 'dark'
+	variant?: "dark";
 }) => {
 	return (
-		<section id={id} className={`py-32 px-6 mx-auto scroll-mt-20 ${variant ==='dark' ? 'bg-darkGray/50' : ''}`}>
+		<section
+			id={id}
+			className={`py-32 px-6 mx-auto scroll-mt-20 ${variant === "dark" ? "bg-darkGray/50" : ""}`}
+		>
 			<div className={"max-w-7xl mx-auto"}>
-
-			<SectionHeading>{heading}</SectionHeading>
-			{children}
-				</div>
+				<SectionHeading>{heading}</SectionHeading>
+				{children}
+			</div>
 		</section>
 	);
 };
@@ -44,16 +46,28 @@ export const Section = ({
 export const Link = ({
 	href,
 	children,
-	className
+	className,
 }: {
 	href: string;
 	children: string;
-	className?:string;
+	className?: string;
 }) => (
 	<NextLink
 		href={href}
-		className={`hover:text-accent transition-colors duration-300 uppercase ${className ?? ''}`}
+		className={`hover:text-accent transition-colors duration-300 uppercase ${className ?? ""}`}
 	>
 		{children}
 	</NextLink>
 );
+
+export const CTALink = ({ className = "", ...props }: ComponentProps<"a">) => {
+	return (
+		<a
+			className={
+				"px-10 py-3 bg-secondary text-primary hover:bg-accent hover:text-white transition-all text-sm font-bold uppercase text-center" +
+				className
+			}
+			{...props}
+		/>
+	);
+};

@@ -1,6 +1,7 @@
-import { Section } from "@/components";
+import { PastShows } from "@/app/past-shows";
+import { CTALink, Section } from "@/components";
 
-type Show = {
+export type Show = {
 	date: string;
 	venue: string;
 	location: string;
@@ -19,7 +20,7 @@ const SHOWS: readonly Show[] = [
 		date: "28.02.26",
 		venue: "Hafenklang",
 		location: "Loud Women Fest",
-		link: ''
+		link: "",
 	},
 ];
 
@@ -29,7 +30,7 @@ export const Shows = () => {
 			<div className="border-t border-lightGray/30">
 				{SHOWS.map((show, i) => (
 					<div
-						key={i}
+						key={show.date}
 						className="py-10 border-b border-lightGray/30 flex flex-col md:flex-row md:items-center justify-between"
 					>
 						<div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-12">
@@ -45,15 +46,15 @@ export const Shows = () => {
 								</p>
 							</div>
 						</div>
-						{show.link && <a
-							href={show.link}
-							className="mt-6 md:mt-0 px-10 py-3 bg-secondary text-primary hover:bg-accent hover:text-white transition-all text-sm font-bold uppercase text-center"
-						>
-							mehr Infos
-						</a>}
+						{show.link && (
+							<CTALink href={show.link} className="mt-6 md:mt-0">
+								mehr Infos
+							</CTALink>
+						)}
 					</div>
 				))}
 			</div>
+			<PastShows />
 		</Section>
 	);
 };
