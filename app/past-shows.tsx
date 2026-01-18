@@ -1,96 +1,20 @@
-import type { Show } from "@/app/shows";
-
-const pastShows: Show[] = [
-	{
-		date: "23.04.2023",
-		venue: "MarX (mit Frau Paul und Belitzki)",
-		location: "Hamburg",
-	},
-	{
-		date: "15.10.2023",
-		venue: "MS Altenwerder (privat)",
-		location: "Hamburg-Finkenwerder",
-	},
-	{
-		date: "25.01.2024",
-		venue: "Häkken (Solirock)",
-		location: "Hamburg",
-	},
-	{
-		date: "16.02.2024",
-		venue: "Klangbar (mit FUXX und Riot Teddy)",
-		location: "Hamburg-Bergedorf",
-	},
-	{
-		date: "16.03.2024",
-		venue:
-			"Seker Huus (mit Inner Conflict, Fornhorst, Kommando Rostkehlen und Die Fliesenleger)",
-		location: "Uplengen",
-	},
-	{
-		date: "05.03.2024",
-		venue: "Soundpresse im Gängeviertel",
-		location: "Hamburg",
-	},
-	{
-		date: "12.04.2024",
-		venue:
-			"Pro Asyl Soli-Konzert, Klub.K (mit Der feine Herr Soundso und Sempf)",
-		location: "Hamburg",
-	},
-	{
-		date: "07.09.2024",
-		venue: "Stadt.Land.Punk 2.0",
-		location: "Hamburg-Ochsenwerder",
-	},
-	{
-		date: "16.11.2024",
-		venue: "Freiraum (mit Tischlerei Lischitzki und Der feine Herr Soundso)",
-		location: "Itzehoe",
-	},
-	{
-		date: "06.06.2025",
-		venue: "Logo (mit Blomenkamp und Swamidemy)",
-		location: "Hamburg",
-	},
-	{
-		date: "19.06.2025",
-		venue: "Kreiselkonzert an der Sternbrücke (mit Bullshit Boy)",
-		location: "Hamburg",
-	},
-	{
-		date: "23.08.2025",
-		venue: "Wurmloch-Festival",
-		location: "Krumstedt/SH",
-	},
-	{
-		date: "30.08.2025",
-		venue: "Sommerfest SZ Norderstedt",
-		location: "Norderstedt",
-	},
-	{
-		date: "06.09.2025",
-		venue: "Rock gegen Rechts",
-		location: "Kellinghusen",
-	},
-	{
-		date: "31.10.2025",
-		venue:
-			"Druckerei im Gängeviertel (mit Light the Cannons und Tender Loving Medication)",
-		location: "Hamburg",
-	},
-];
+export type Show = {
+	date: string;
+	venue: string;
+	location: string;
+	link?: string;
+};
 type PastShowsProps = {
 	shows: readonly Show[];
 };
 
-const parseDate = (dateStr: string): Date => {
+export const parseDate = (dateStr: string): Date => {
 	const [day, month, year] = dateStr.split(".").map(Number);
 	return new Date(year, month - 1, day);
 };
 
-export function PastShows() {
-	const sortedPastShows = [...pastShows].sort(
+export function PastShows({ shows }: PastShowsProps) {
+	const sortedPastShows = [...shows].sort(
 		(a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime(),
 	);
 

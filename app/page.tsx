@@ -34,12 +34,19 @@ export default function BandPage(): JSX.Element {
 					<SectionHeading>Music</SectionHeading>
 					<div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 						<div className="lg:col-span-7 aspect-video bg-lightGray relative group flex items-center justify-center">
-							<Image
+							<img
 								className="absolute inset-0 w-full h-full object-fit"
-								alt=""
-								src="ep.jpeg"
-								width={0}
-								height={0}
+								alt="Album art for Drown in deep, Baby"
+								src="ep-800.webp"
+								srcSet="
+        ep-480.webp 480w,
+        ep-800.webp 800w,
+        ep-1200.webp 1200w
+    "
+								sizes="
+        (max-width: 1023px) 100vw,
+        60vw
+    "
 							/>
 						</div>
 						<div className="lg:col-span-5 flex flex-col justify-center">

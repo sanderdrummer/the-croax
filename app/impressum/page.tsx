@@ -4,7 +4,6 @@ export default function Impressum() {
 			<h1 className="font-display text-5xl text-white mb-12 uppercase tracking-widest">
 				Impressum
 			</h1>
-
 			<div className="space-y-8">
 				{/* SECTION 1: Operator Information */}
 				<section>
@@ -14,11 +13,11 @@ export default function Impressum() {
 					<p className="leading-relaxed">
 						<strong>The Croax</strong>
 						<br />
-						c/o [Vorname Nachname des Verantwortlichen]
+						c/o Anaja Busch
 						<br />
-						[Musterstraße 1]
+						Durchschnitt 20
 						<br />
-						[20xxx Hamburg]
+						[20146 Hamburg]
 					</p>
 				</section>
 
@@ -28,7 +27,6 @@ export default function Impressum() {
 						Kontakt
 					</h2>
 					<p className="leading-relaxed">
-						Telefon: [Deine Telefonnummer]
 						<br />
 						E-Mail:{" "}
 						<a
@@ -49,11 +47,11 @@ export default function Impressum() {
 						gem. § 55 Abs. 2 RStV / § 18 Abs. 2 MStV:
 					</p>
 					<p className="leading-relaxed">
-						[Vorname Nachname]
+						Anaja Busch
 						<br />
-						[Musterstraße 1]
+						Durchschnitt 20
 						<br />
-						[20xxx Hamburg]
+						[20146 Hamburg]
 					</p>
 				</section>
 

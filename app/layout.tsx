@@ -15,8 +15,9 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-	title: "The Croax | Hamburg Punkrock",
-	description: "Laut, direkt und ohne Schnickschack.",
+	title: " The Croax | Punk-Rockband aus Hamburg | Live & Laut",
+	description:
+		"Authentischer Punk-Rock & Garagerock aus Hamburg. Erlebt den Riot Grrrl Spirit von The Croax live auf der Bühne. Jetzt reinhören und für Gigs buchen!",
 };
 
 export default function RootLayout({
@@ -38,8 +39,13 @@ export default function RootLayout({
 									width={482}
 									height={195}
 									className="max-w-full"
-									src="logo.png"
 									alt="the croax"
+									src="logo-800.webp" // Fallback for older browsers
+									srcSet="
+        logo-480.webp 480w,
+        logo-800.webp 800w
+    "
+									sizes="(max-width: 482px) 100vw, 482px"
 								/>
 							</h1>
 							<h2 className="font-sans tracking-[0.5em] text-xs md:text-sm  text-accent">

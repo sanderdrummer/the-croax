@@ -49,7 +49,7 @@ export const Link = ({
 	className,
 }: {
 	href: string;
-	children: string;
+	children: ReactNode;
 	className?: string;
 }) => (
 	<NextLink
@@ -64,7 +64,7 @@ export const CTALink = ({ className = "", ...props }: ComponentProps<"a">) => {
 	return (
 		<a
 			className={
-				"px-10 py-3 bg-secondary text-primary hover:bg-accent hover:text-white transition-all text-sm font-bold uppercase text-center" +
+				"px-10 py-3  bg-secondary text-primary hover:bg-accent hover:text-white transition-all text-sm font-bold uppercase text-center" +
 				className
 			}
 			{...props}
