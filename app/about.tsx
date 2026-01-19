@@ -5,7 +5,7 @@ import { Link, P, Section } from "@/components";
 
 export const About = (): JSX.Element => {
 	return (
-		<Section id="about-us" heading="About us">
+		<Section id="about-us" heading="Über uns">
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
 				<img
 					className="inset-0 w-full h-full object-cover "
@@ -75,17 +75,15 @@ export const About = (): JSX.Element => {
 						</P>
 					</div>
 
-					{/* Call to action area: Styled as a highlighted "Gig Poster" footer */}
 					<div className="mt-4 p-6 bg-darkGray border-l-8 border-accent">
 						<p className="font-display text-xl uppercase tracking-widest mb-4">
-							Bereit für echten Garagerock?
+							Bereit?
 						</p>
 						<div className="flex flex-wrap gap-x-6 gap-y-4 items-center">
 							<Link
 								href="#"
 								className="group flex items-center gap-2 text-accent font-bold hover:text-secondary transition-colors"
 							>
-								<span>👉</span>
 								<span className="underline decoration-2 underline-offset-4 decoration-wavy">
 									Jetzt Booking-Anfrage senden
 								</span>
@@ -94,7 +92,6 @@ export const About = (): JSX.Element => {
 								href="#"
 								className="group flex items-center gap-2 text-accent font-bold hover:text-secondary transition-colors"
 							>
-								<span>👉</span>
 								<span className="underline decoration-2 underline-offset-4 decoration-wavy">
 									Hört hier in unsere Songs rein
 								</span>

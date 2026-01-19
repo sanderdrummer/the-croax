@@ -133,7 +133,10 @@ const SocialTile = ({ link }: SocialTileProps): JSX.Element => {
 				<h3 className="font-display text-xl md:text-2xl break-all uppercase text-secondary group-hover:text-white transition-colors">
 					{link.label}
 				</h3>
-				<p aria-hidden="true" className="mt-2 text-sm text-secondary/60 group-hover:text-primary/80 font-sans transition-colors">
+				<p
+					aria-hidden="true"
+					className="mt-2 text-sm text-secondary/60 group-hover:text-primary/80 font-sans transition-colors"
+				>
 					{link.description}
 				</p>
 			</div>

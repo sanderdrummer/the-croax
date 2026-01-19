@@ -121,7 +121,7 @@ export const Shows = () => {
 		(a, b) => parseDate(a.date).getTime() - parseDate(b.date).getTime(),
 	);
 	return (
-		<Section variant="dark" id="live" heading="Shows">
+		<Section variant="dark" id="live" heading="Live">
 			<div className="border-t border-lightGray/30">
 				{sortedFutureShows.map((show) => (
 					<div
