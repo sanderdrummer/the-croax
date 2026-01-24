@@ -1,3 +1,3 @@
-:HL["/the-croax/_next/static/chunks/a1a0697fef6c6ac3.css","style"]
+:HL["/the-croax/_next/static/chunks/3add383816f411c2.css","style"]
 :HL["logo-800.webp","image",{"imageSrcSet":" logo-480.webp 480w, logo-800.webp 800w ","imageSizes":"(max-width: 482px) 100vw, 482px"}]
-0:{"buildId":"wYbdP-DctVSPE7Y0O7hKI","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"Aopes-cqpdyP4iI75x5fz","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
