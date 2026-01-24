@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { JSX } from "react";
 import { About } from "@/app/about";
 import { Shows } from "@/app/shows";
@@ -11,14 +10,14 @@ export default function BandPage(): JSX.Element {
 				{/* Hero Section */}
 				<nav className="sticky top-0 w-full z-50 bg-darkGray/80 backdrop-blur-md border-b border-lightGray/30">
 					<div className="flex gap-8 place-content-center">
-						<Link href="#about-us" className="px-2 py-6 tracking-widest">
+						<Link href="#über-uns" className="px-2 py-6 tracking-widest">
 							Über uns
 						</Link>
 						<Link href="#live" className="px-2 py-6 tracking-widest">
 							Live
 						</Link>
-						<Link href="#music" className="px-2 py-6 tracking-widest">
-							Music
+						<Link href="#musik" className="px-2 py-6 tracking-widest">
+							Musik
 						</Link>
 					</div>
 				</nav>
@@ -26,12 +25,11 @@ export default function BandPage(): JSX.Element {
 				<About />
 				<Shows />
 
-				{/* Music Section */}
 				<section
-					id="music"
+					id="musik"
 					className="py-32 px-6 max-w-7xl mx-auto scroll-mt-20"
 				>
-					<SectionHeading>Music</SectionHeading>
+					<SectionHeading>Musik</SectionHeading>
 					<div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 						<div className="lg:col-span-7 aspect-video bg-lightGray relative group flex items-center justify-center">
 							<img

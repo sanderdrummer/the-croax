@@ -9,11 +9,14 @@ type SocialLink = {
 	platform: string;
 	description: string;
 	icon: IconComponent;
+	isDownload?: boolean;
 };
 
 type SocialTileProps = {
 	link: SocialLink;
 };
+
+// --- Icons ---
 
 const IconInstagram: IconComponent = ({ className }) => (
 	<svg
@@ -70,6 +73,18 @@ const IconEmail: IconComponent = ({ className }) => (
 	</svg>
 );
 
+// Neues Icon für das Pressekit (Download-Symbol)
+const IconPressKit: IconComponent = ({ className }) => (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 24 24"
+		fill="currentColor"
+		className={className}
+	>
+		<path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+	</svg>
+);
+
 const SOCIAL_LINKS: readonly SocialLink[] = [
 	{
 		platform: "Instagram",
@@ -106,6 +121,14 @@ const SOCIAL_LINKS: readonly SocialLink[] = [
 		description: "Get in Touch",
 		icon: IconEmail,
 	},
+	{
+		platform: "Pressekit",
+		label: "Download EPK",
+		href: "/thecroax_presskit.zip",
+		description: "Photos, Bio & TechRider",
+		icon: IconPressKit,
+		isDownload: true,
+	},
 ] as const;
 
 const SocialTile = ({ link }: SocialTileProps): JSX.Element => {
@@ -114,8 +137,9 @@ const SocialTile = ({ link }: SocialTileProps): JSX.Element => {
 	return (
 		<a
 			href={link.href}
-			target="_blank"
+			target={link.isDownload ? undefined : "_blank"}
 			rel="noopener noreferrer"
+			download={link.isDownload} // Aktiviert den Download-Dialog
 			className="group relative flex items-start gap-6 p-8 border border-lightGray/20 bg-darkGray/30 hover:bg-accent transition-all duration-500 overflow-hidden"
 		>
 			<span className="absolute -bottom-4 -right-4 font-display text-6xl opacity-5 uppercase italic group-hover:opacity-20 group-hover:scale-110 transition-all duration-500 select-none">
@@ -151,10 +175,6 @@ export function SocialSection(): JSX.Element {
 				{SOCIAL_LINKS.map((link) => (
 					<SocialTile key={link.platform} link={link} />
 				))}
-
-				<div className="hidden lg:flex items-center justify-center p-8 border border-dashed border-lightGray/20 opacity-20 font-display text-xl uppercase tracking-widest">
-					More to come
-				</div>
 			</div>
 		</section>
 	);
