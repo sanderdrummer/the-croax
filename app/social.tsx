@@ -16,8 +16,6 @@ type SocialTileProps = {
 	link: SocialLink;
 };
 
-// --- Icons ---
-
 const IconInstagram: IconComponent = ({ className }) => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
@@ -89,14 +87,14 @@ const SOCIAL_LINKS: readonly SocialLink[] = [
 	{
 		platform: "Instagram",
 		label: "@thecroax",
-		href: "https://instagram.com/thecroax",
+		href: "https://instagram.com/the.croax",
 		description: "Photos & Stories",
 		icon: IconInstagram,
 	},
 	{
 		platform: "YouTube",
 		label: "The Croax Official",
-		href: "https://youtube.com/c/thecroax",
+		href: "https://www.youtube.com/channel/UCYTwAPKQvGntp0BYz_uOoZg",
 		description: "Music Videos & Live",
 		icon: IconYoutube,
 	},
@@ -110,14 +108,14 @@ const SOCIAL_LINKS: readonly SocialLink[] = [
 	{
 		platform: "Facebook",
 		label: "The Croax Hamburg",
-		href: "https://facebook.com/thecroax",
+		href: "https://www.facebook.com/p/The-Croax-61565584623148/",
 		description: "Community & Events",
 		icon: IconFacebook,
 	},
 	{
 		platform: "Email",
 		label: "booking@thecroax.de",
-		href: "mailto:booking@thecroax.de",
+		href: "mailto:band@thecroax.com",
 		description: "Get in Touch",
 		icon: IconEmail,
 	},

@@ -51,10 +51,7 @@ export default function BandPage(): JSX.Element {
 							<h3 className="font-display text-4xl mb-6">
 								Drown in deep, Baby
 							</h3>
-							<p className="text-secondary/70 mb-10 text-lg">
-								The sophomore album exploring the intersection of silence and
-								distortion.
-							</p>
+							<p className="text-secondary/70 mb-10 text-lg">Bald verfügbar</p>
 							<div className="grid grid-cols-2 gap-4">
 								<CTALink href="https://open.spotify.com/artist/36a3EwllvuaKLwOZfYE6Km">
 									Spotify

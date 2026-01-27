@@ -92,7 +92,7 @@ export const About = (): JSX.Element => {
 						</p>
 						<div className="flex flex-wrap gap-x-6 gap-y-4 items-center">
 							<Link
-								href="#"
+								href="mailto:band@thecroax.com"
 								className="group flex items-center gap-2 text-accent font-bold hover:text-secondary transition-colors"
 							>
 								<span className="underline decoration-2 underline-offset-4 decoration-wavy">
@@ -100,7 +100,7 @@ export const About = (): JSX.Element => {
 								</span>
 							</Link>
 							<Link
-								href="#"
+								href="#musik"
 								className="group flex items-center gap-2 text-accent font-bold hover:text-secondary transition-colors"
 							>
 								<span className="underline decoration-2 underline-offset-4 decoration-wavy">

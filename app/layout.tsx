@@ -1,5 +1,5 @@
 import { Open_Sans, Protest_Riot } from "next/font/google";
-import "./globals.css"; // Your global styles
+import "./globals.css";
 import type { Metadata } from "next";
 import { Link } from "@/components";
 
@@ -40,7 +40,7 @@ export default function RootLayout({
 									height={195}
 									className="max-w-full"
 									alt="the croax"
-									src="logo-800.webp" // Fallback for older browsers
+									src="logo-800.webp"
 									srcSet="
         logo-480.webp 480w,
         logo-800.webp 800w
