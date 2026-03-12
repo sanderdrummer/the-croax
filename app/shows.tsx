@@ -95,9 +95,15 @@ const shows: readonly Show[] = [
 	},
 ];
 
-const splitShows = (shows: readonly Show[]) => {
-	const now = new Date();
+const getNow = () => {
+	const fake = process.env.E2E_FAKE_DATE;
+	const now = fake ? new Date(fake) : new Date();
 	now.setHours(0, 0, 0, 0);
+	return now;
+};
+
+const splitShows = (shows: readonly Show[]) => {
+	const now = getNow();
 
 	const futureShows: Show[] = [];
 	const pastShows: Show[] = [];
