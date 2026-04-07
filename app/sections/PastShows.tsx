@@ -1,16 +1,7 @@
-export type Show = {
-	date: string;
-	venue: string;
-	location: string;
-	link?: string;
-};
+import { parseDate, type Show } from "@/types/show";
+
 type PastShowsProps = {
 	shows: readonly Show[];
-};
-
-export const parseDate = (dateStr: string): Date => {
-	const [day, month, year] = dateStr.split(".").map(Number);
-	return new Date(year, month - 1, day);
 };
 
 export function PastShows({ shows }: PastShowsProps) {
@@ -25,9 +16,9 @@ export function PastShows({ shows }: PastShowsProps) {
 			</h3>
 
 			<div className="grid grid-cols-1 gap-1">
-				{sortedPastShows.map((show, index) => (
+				{sortedPastShows.map((show) => (
 					<div
-						key={`${show.date}-${index}`}
+						key={show.date}
 						className="grid grid-cols-1 md:grid-cols-[140px_1fr_200px] items-baseline py-4 border-b border-lightGray/5 "
 					>
 						<span className="text-s tracking-tighter text-accent/80 transition-colors">

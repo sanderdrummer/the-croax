@@ -1,7 +1,8 @@
 import type { JSX } from "react";
-// Assuming these are your local component imports
-import { SocialSection } from "@/app/social";
-import { Link, P, Section } from "@/components";
+import { SocialSection } from "@/app/sections/Social";
+import { Link } from "@/components/ui/Link";
+import { P } from "@/components/ui/P";
+import { Section } from "@/components/ui/Section";
 
 export const About = (): JSX.Element => {
 	return (
@@ -48,15 +49,15 @@ export const About = (): JSX.Element => {
 							<span className="italic font-bold text-secondary">
 								Riot Grrrls
 							</span>{" "}
-							Riot Grrrls zuhause. Das bedeutet für uns: Musik mit Haltung.
+							zuhause. Das bedeutet für uns: Musik mit Haltung.
 							Dabei darf das nötige Augenzwinkern aber nie fehlen. Weil alles,
 							was nervt, mit Humor – mal bissig, mal ironisch – erträglicher
-							wird. Inzwischen ist Tobi unser „Quotenmann“ an den Drums – und
+							wird. Inzwischen ist Tobi unser „Quotenmann" an den Drums – und
 							das passt perfekt! Vorne stehen Kat am Mic und Anja an der
 							Gitarre. Die Position am Bass ist hoffentlich bald wieder fest
 							besetzt. Im Moment haben wir hier eine Aushilfe. Bei uns zählt vor
 							allem eins: Es muss ballern und Spaß machen! Musikalisch mixen wir
-							<b>Punk mit einem bisschen Garagerock und/oder Rock ‛n’ Roll</b>{" "}
+							<b>Punk mit einem bisschen Garagerock und/oder Rock ‛n' Roll</b>{" "}
 							zu einem Sound, der ordentlich <b>Energie versprüht</b>.
 							Hauptsache, es ist <b>laut</b> und wir haben gemeinsam mit euch
 							eine gute Zeit.

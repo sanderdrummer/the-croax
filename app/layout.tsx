@@ -1,7 +1,7 @@
 import { Open_Sans, Protest_Riot } from "next/font/google";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Link } from "@/components";
+import { Link } from "@/components/ui/Link";
 
 const anton = Protest_Riot({
 	subsets: ["latin"],
@@ -15,7 +15,7 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-	title: " The Croax | Punk-Rockband aus Hamburg | Live & Laut",
+	title: "The Croax | Punk-Rockband aus Hamburg | Live & Laut",
 	description:
 		"Authentischer Punk-Rock & Garagerock aus Hamburg. Erlebt den Riot Grrrl Spirit von The Croax live auf der Bühne. Jetzt reinhören und für Gigs buchen!",
 };
@@ -52,7 +52,7 @@ export default function RootLayout({
 								Hamburg Grrrl Punk
 							</h2>
 							<h3 className="font-sans tracking-[0.5em] text-xs md:text-sm text-secondary/60">
-								Laut, direkt und ohne Schnickschack
+								Laut, direkt und ohne Schnickschnack
 							</h3>
 						</div>
 					</section>
