@@ -10,7 +10,6 @@ export const Music = () => (
 		<div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 			<div className="lg:col-span-7 aspect-video bg-lightGray relative group flex items-center justify-center">
 				<img
-					className="absolute inset-0 w-full h-full object-cover"
 					alt="Album art for Drown in deep, Baby"
 					src="cover-800.webp"
 					srcSet="cover-480.webp 480w, cover-800.webp 800w, cover-1200.webp 1200w"
