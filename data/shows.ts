@@ -1,6 +1,6 @@
 import type { Show } from "@/types/show";
-
 export const shows: readonly Show[] = [
+	{ date: "30.08.2026", venue: "Fahrradkonzert", location: "Winsen (Luhe)" },
 	{ date: "21.02.2026", venue: "Freiraum", location: "Itzehoe" },
 	{
 		date: "28.02.2026",
