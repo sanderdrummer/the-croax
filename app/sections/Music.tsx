@@ -36,6 +36,9 @@ export const Music = () => (
 					<CTALink href="https://www.deezer.com/us/artist/288633311">
 						Deezer
 					</CTALink>
+					<CTALink href="https://tidal.com/artist/51626289">
+						Tidal
+					</CTALink>
 					<CTALink href="https://thecroax.bandcamp.com/">
 						Bandcamp
 					</CTALink>
