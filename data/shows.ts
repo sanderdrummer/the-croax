@@ -1,7 +1,7 @@
 import type { Show } from "@/types/show";
 export const shows: readonly Show[] = [
 	{
-		date: "04.06.2025",
+		date: "04.06.2026",
 		venue: "Kreiselkonzert an der Sternbrücke",
 		location: "Hamburg",
 	},
