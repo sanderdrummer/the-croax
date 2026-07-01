@@ -1,12 +1,17 @@
 import type { Show } from "@/types/show";
 export const shows: readonly Show[] = [
 	{
+		date: "08.08.2026",
+		venue: "I-Punkt Skateland E.V.",
+		location: "Hamburg",
+	},
+	{
 		date: "04.06.2026",
 		venue: "Kreiselkonzert an der Sternbrücke",
 		location: "Hamburg",
 	},
 	{ date: "31.10.2026", venue: "Fabrique Gängeviertel", location: "Hamburg" },
-	{ date: "30.08.2026", venue: "Fahrradkonzert", location: "Winsen (Luhe)" },
+	{ date: "30.08.2026", venue: "Fahrradkonzert Feuerwehrhaus Sangenstedt", location: "Winsen (Luhe)" },
 	{ date: "21.02.2026", venue: "Freiraum", location: "Itzehoe" },
 	{
 		date: "28.02.2026",
