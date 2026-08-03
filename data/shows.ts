@@ -6,6 +6,11 @@ export const shows: readonly Show[] = [
 		location: "Hamburg",
 	},
 	{
+		date: "21.08.2026",
+		venue: "Monkeys Music Club",
+		location: "Hamburg",
+	},
+	{
 		date: "04.06.2026",
 		venue: "Kreiselkonzert an der Sternbrücke",
 		location: "Hamburg",
