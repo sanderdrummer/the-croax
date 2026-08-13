@@ -1,3 +1,4 @@
+import { BandChips } from "@/components/ui/BandChips";
 import { parseDate, type Show } from "@/types/show";
 
 type PastShowsProps = {
@@ -25,9 +26,12 @@ export function PastShows({ shows }: PastShowsProps) {
 							{show.date}
 						</span>
 
-						<span className="text-secondary/80 transition-colors font-sans text-sm md:text-base pr-4">
-							{show.venue}
-						</span>
+						<div className="pr-4">
+							<span className="text-secondary/80 transition-colors font-sans text-sm md:text-base">
+								{show.venue}
+							</span>
+							<BandChips bands={show.bands} />
+						</div>
 
 						<span className="text-lightGray transition-colors font-display uppercase text-s tracking-widest md:text-right">
 							{show.location}

@@ -1,8 +1,9 @@
-import { shows } from "@/data/shows";
-import { parseDate, type Show } from "@/types/show";
 import { PastShows } from "@/app/sections/PastShows";
+import { BandChips } from "@/components/ui/BandChips";
 import { CTALink } from "@/components/ui/CTALink";
 import { Section } from "@/components/ui/Section";
+import { shows } from "@/data/shows";
+import { parseDate, type Show } from "@/types/show";
 
 const getNow = () => {
 	const fake = process.env.E2E_FAKE_DATE;
@@ -53,6 +54,7 @@ export const Shows = () => {
 								<p className="text-secondary/60 uppercase text-sm tracking-widest">
 									{show.location}
 								</p>
+								<BandChips bands={show.bands} />
 							</div>
 						</div>
 						{show.link && (

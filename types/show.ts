@@ -3,6 +3,7 @@ export type Show = {
 	venue: string;
 	location: string;
 	link?: string;
+	bands?: readonly string[];
 };
 
 export const parseDate = (dateStr: string): Date => {
