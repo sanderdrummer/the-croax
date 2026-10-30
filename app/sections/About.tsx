@@ -2,24 +2,15 @@ import type { JSX } from "react";
 import { SocialSection } from "@/app/sections/Social";
 import { Link } from "@/components/ui/Link";
 import { P } from "@/components/ui/P";
+import { PhotoCollage } from "@/components/ui/PhotoCollage";
 import { Section } from "@/components/ui/Section";
 
 export const About = (): JSX.Element => {
 	return (
 		<Section id="über-uns" heading="Über uns">
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
-				<img
-					className="inset-0 w-full h-full object-cover "
-					alt="The Croax performing live on stage - Grrrl Punk Band Hamburg"
-					src="image00001-800.webp"
-					srcSet="
-                image00001-480.webp 480w,
-                image00001-800.webp 800w,
-                image00001-1200.webp 1200w
-              "
-					sizes="(max-width: 767px) 100vw, 50vw"
-				/>
+			<PhotoCollage />
 
+			<div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
 				<div className="flex flex-col gap-8 relative">
 					{/* Decorative Background Element */}
 					<div className="absolute -top-10 -left-10 text-9xl font-display opacity-[0.03] select-none pointer-events-none">
@@ -49,21 +40,24 @@ export const About = (): JSX.Element => {
 							<span className="italic font-bold text-secondary">
 								Riot Grrrls
 							</span>{" "}
-							zu Hause. Das bedeutet für uns: Musik mit Haltung.
-							Dabei darf das nötige Augenzwinkern aber nie fehlen. Weil alles,
-							was nervt, mit Humor – mal bissig, mal ironisch – erträglicher
-							wird. Inzwischen ist Tobi unser „Quotenmann" an den Drums – und
-							das passt perfekt! Vorne stehen Kat am Mic und Anja an der
-							Gitarre. Die Position am Bass ist hoffentlich bald wieder fest
-							besetzt. Im Moment haben wir hier eine Aushilfe. Bei uns zählt vor
-							allem eins: Es muss ballern und Spaß machen! Musikalisch mixen wir{" "}
+							zu Hause. Das bedeutet für uns: Musik mit Haltung. Dabei darf das
+							nötige Augenzwinkern aber nie fehlen, weil alles, was nervt, mit
+							Humor – mal bissig, mal ironisch – erträglicher wird. Inzwischen
+							ist Tobi unser „Quotenmann" an den Drums – und das passt perfekt!
+							Vorne stehen Kat am Mic und Anja an der Gitarre. Und am Bass ist
+							jetzt Katha fest dabei! Ihre Storys sorgen bei uns ständig für
+							Lacher, und mit ihrer Power treibt sie uns richtig nach vorne. Bei
+							uns zählt vor allem eins: Es muss ballern und Spaß machen!
+							Musikalisch mixen wir{" "}
 							<b>Punk mit einem bisschen Garagerock und/oder Rock ‛n' Roll</b>{" "}
 							zu einem Sound, der ordentlich <b>Energie versprüht</b>.
 							Hauptsache, es ist <b>laut</b> und wir haben gemeinsam mit euch
 							eine gute Zeit.
 						</P>
 					</div>
+				</div>
 
+				<div className="flex flex-col gap-8">
 					<div className="space-y-6">
 						{/* H2 styled with a thick, offset underline */}
 						<div className="relative self-start">
@@ -80,7 +74,7 @@ export const About = (): JSX.Element => {
 							<b>
 								Wir reisen auch deutlich weiter als bis zur letzten
 								U-Bahn-Haltestelle! Wir sind für Gigs in ganz Deutschland
-								buchbar{" "}
+								buchbar
 							</b>
 							. Wenn ihr also eine Band sucht, die nicht nur im Norden
 							ordentlich Krach macht, sind wir am Start. Fragt uns einfach an!

@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 /**
  * E2E tests for the main page of The Croax band site.
@@ -41,6 +41,23 @@ test("navigation bar shows all three links", async ({ page }) => {
 test("about section renders band image", async ({ page }) => {
 	const about = page.locator("#über-uns");
 	await expect(about.locator("img").first()).toBeVisible();
+});
+
+test("clicking a collage photo opens and closes the overlay", async ({
+	page,
+}) => {
+	const about = page.locator("#über-uns");
+	const dialog = page.getByRole("dialog");
+
+	await about.getByRole("button").first().click();
+	await expect(dialog).toBeVisible();
+	await page.keyboard.press("Escape");
+	await expect(dialog).toBeHidden();
+
+	await about.getByRole("button").nth(1).click();
+	await expect(dialog).toBeVisible();
+	await dialog.click();
+	await expect(dialog).toBeHidden();
 });
 
 test("about section contains band description text", async ({ page }) => {
@@ -105,10 +122,7 @@ test('Markthalle show (29.01.2026) has a "mehr Infos" link', async ({
 	const showRow = liveSection.locator("div").filter({ hasText: "29.01.2026" });
 	const moreInfoLink = showRow.getByRole("link", { name: /mehr infos/i });
 	await expect(moreInfoLink).toBeVisible();
-	await expect(moreInfoLink).toHaveAttribute(
-		"href",
-		/markthalle-hamburg\.de/,
-	);
+	await expect(moreInfoLink).toHaveAttribute("href", /markthalle-hamburg\.de/);
 });
 
 test("only the one show with a link shows a 'mehr Infos' button", async ({

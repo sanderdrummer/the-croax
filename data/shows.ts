@@ -17,7 +17,7 @@ export const shows: readonly Show[] = [
 		venue: "Kreiselkonzert an der Sternbrücke",
 		location: "Hamburg",
 	},
-	{ date: "31.10.2026", venue: "Fabrique Gängeviertel", location: "Hamburg" },
+	{ date: "18.12.2026", venue: "Gerber 3", location: "Weimar" },
 	{
 		date: "30.08.2026",
 		venue: "Fahrradkonzert Feuerwehrhaus Sangenstedt",
