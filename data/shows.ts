@@ -1,6 +1,24 @@
 import type { Show } from "@/types/show";
 export const shows: readonly Show[] = [
 	{
+		date: "15.01.2027",
+		venue: "Villa Wedel",
+		location: "Hamburg",
+		bands: ["Stone Cold Love"],
+	},
+	{
+		date: "20.04.2027",
+		venue: "Frau Hedi",
+		location: "Hamburg",
+		bands: ["tvashtar"],
+	},
+	{
+		date: "27.02.2027",
+		venue: "Freiraum",
+		location: "Itzehoe",
+		bands: ["Bullshit Boy", "Repeat"],
+	},
+	{
 		date: "08.08.2026",
 		venue: "I-Punkt Skateland E.V.",
 		location: "Hamburg",
